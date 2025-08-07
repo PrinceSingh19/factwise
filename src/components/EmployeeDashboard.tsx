@@ -115,7 +115,7 @@ export const EmployeeDashboard: React.FC = () => {
 				flex: 1,
 				sortable: false,
 				filter: true,
-				valueGetter: (params) => (params.data.skills ? params.data.skills.join(", ") : ""),
+				//valueGetter: (params) => (params.data.skills ? params.data.skills.join(", ") : ""),
 			},
 			{
 				field: "status",
