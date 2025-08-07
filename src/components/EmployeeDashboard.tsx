@@ -66,6 +66,7 @@ export const EmployeeDashboard: React.FC = () => {
 				pinned: "left",
 				sortable: true,
 				filter: true,
+				valueGetter: (params) => `${params.data.firstName} ${params.data.lastName}`,
 			},
 			{
 				field: "department",
@@ -113,7 +114,8 @@ export const EmployeeDashboard: React.FC = () => {
 				minWidth: 300,
 				flex: 1,
 				sortable: false,
-				filter: false,
+				filter: true,
+				valueGetter: (params) => (params.data.skills ? params.data.skills.join(", ") : ""),
 			},
 			{
 				field: "status",
@@ -122,6 +124,12 @@ export const EmployeeDashboard: React.FC = () => {
 				minWidth: 120,
 				sortable: true,
 				filter: true,
+				valueGetter: (params) => {
+					const employee = params.data;
+					if (!employee.isActive) return "inactive";
+					if (employee.performanceRating < 3.0) return "probation";
+					return "active";
+				},
 			},
 			{
 				field: "tenure",
@@ -130,6 +138,12 @@ export const EmployeeDashboard: React.FC = () => {
 				sortable: true,
 				filter: "agNumberColumnFilter",
 				cellStyle: { textAlign: "center" } as CellStyle,
+				valueGetter: (params) => {
+					const hire = new Date(params.data.hireDate);
+					const now = new Date();
+					const diffTime = Math.abs(now.getTime() - hire.getTime());
+					return Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
+				},
 			},
 			{
 				field: "projectsCompleted",
@@ -421,7 +435,7 @@ export const EmployeeDashboard: React.FC = () => {
 									defaultColDef={defaultColDef}
 									onGridReady={onGridReady}
 									pagination={true}
-									paginationPageSize={20}
+									paginationPageSize={10}
 									paginationPageSizeSelector={[10, 20, 50, 100]}
 									suppressRowClickSelection={true}
 									rowSelection="multiple"
