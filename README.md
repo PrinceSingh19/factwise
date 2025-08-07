@@ -1,6 +1,6 @@
 # FactWise Employee Dashboard
 
-A comprehensive, professional employee management dashboard built with React, TypeScript, and AG Grid for supply chain management operations.
+A comprehensive, professional employee management dashboard built with React, TypeScript, and AG Grid.
 
 ## 🚀 Features
 
@@ -9,7 +9,6 @@ A comprehensive, professional employee management dashboard built with React, Ty
 - **Advanced Data Grid**: Powered by AG Grid with sorting, filtering, and pagination
 - **Real-time Search**: Quick filter across all employee data
 - **Department Filtering**: Filter employees by department
-- **Export Capabilities**: Export data to CSV format
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 
 ### Custom Cell Renderers
@@ -83,16 +82,6 @@ src/
 └── index.css                   # Global styles and AG Grid theming
 ```
 
-## 💼 Supply Chain Focus
-
-This dashboard is specifically designed for supply chain management companies with:
-
-- **Department Structure**: Engineering, Operations, Logistics, Procurement, Sales, Marketing, HR, Finance
-- **Role-Based Organization**: Clear hierarchy and reporting structure
-- **Performance Tracking**: Metrics relevant to supply chain operations
-- **Skills Management**: Technical and operational skill tracking
-- **Professional Styling**: Corporate-grade UI suitable for enterprise use
-
 ## 🎨 Design Features
 
 ### Professional Styling
@@ -109,14 +98,6 @@ This dashboard is specifically designed for supply chain management companies wi
 - Expandable skill tags to save space
 - Hover effects and smooth transitions
 - Loading states and error handling
-
-### Accessibility
-
-- Semantic HTML structure
-- Keyboard navigation support
-- Screen reader friendly
-- High contrast color combinations
-- Focus indicators
 
 ## 📊 Data Management
 
@@ -197,27 +178,6 @@ Update `src/index.css` for AG Grid theme customization or modify Tailwind classe
 - **Fallback UI**: User-friendly error messages
 - **Development Tools**: Detailed error information in development mode
 
-## 📈 Future Enhancements
-
-- **Real-time Data**: WebSocket integration for live updates
-- **Advanced Filtering**: Date ranges, multi-select filters
-- **Data Visualization**: Charts and graphs for analytics
-- **User Management**: Role-based access control
-- **API Integration**: Backend service integration
-- **Bulk Operations**: Multi-row actions and updates
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
 ## 📄 License
 
 This project is licensed under the MIT License.
-
----
-
-**Built with ❤️ for FactWise Supply Chain Management**
