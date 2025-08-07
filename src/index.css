@@ -1,1 +1,143 @@
 @import "tailwindcss";
+
+/* AG Grid custom styling for supply chain theme */
+.ag-theme-quartz {
+	--ag-background-color: #ffffff;
+	--ag-header-background-color: #f8fafc;
+	--ag-odd-row-background-color: #f9fafb;
+	--ag-row-hover-color: #f3f4f6;
+	--ag-selected-row-background-color: #dbeafe;
+	--ag-border-color: #e5e7eb;
+	--ag-header-foreground-color: #374151;
+	--ag-foreground-color: #111827;
+	--ag-secondary-foreground-color: #6b7280;
+	--ag-input-focus-border-color: #3b82f6;
+	--ag-range-selection-background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Custom scrollbar for better UX */
+.ag-theme-quartz .ag-body-viewport::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+.ag-theme-quartz .ag-body-viewport::-webkit-scrollbar-track {
+	background: #f1f5f9;
+	border-radius: 4px;
+}
+
+.ag-theme-quartz .ag-body-viewport::-webkit-scrollbar-thumb {
+	background: #cbd5e1;
+	border-radius: 4px;
+}
+
+.ag-theme-quartz .ag-body-viewport::-webkit-scrollbar-thumb:hover {
+	background: #94a3b8;
+}
+
+/* Header styling for professional look */
+.ag-theme-quartz .ag-header-cell {
+	font-weight: 600;
+	font-size: 0.875rem;
+	border-right: 1px solid var(--ag-border-color);
+}
+
+.ag-theme-quartz .ag-header-cell:last-child {
+	border-right: none;
+}
+
+/* Row styling for better readability */
+.ag-theme-quartz .ag-row {
+	border-bottom: 1px solid #f3f4f6;
+}
+
+.ag-theme-quartz .ag-cell {
+	display: flex;
+	align-items: center;
+	padding: 8px 12px;
+	border-right: 1px solid #f9fafb;
+}
+
+.ag-theme-quartz .ag-cell:last-child {
+	border-right: none;
+}
+
+/* Pagination styling */
+.ag-theme-quartz .ag-paging-panel {
+	border-top: 2px solid #e5e7eb;
+	background-color: #f8fafc;
+	padding: 12px 16px;
+}
+
+/* Filter styling */
+.ag-theme-quartz .ag-filter-toolpanel {
+	background-color: #ffffff;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+}
+
+/* Loading overlay */
+.ag-theme-quartz .ag-overlay-loading-wrapper {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fade-in {
+	animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+	.ag-theme-quartz {
+		font-size: 0.875rem;
+	}
+
+	.ag-theme-quartz .ag-cell {
+		padding: 6px 8px;
+	}
+
+	.ag-theme-quartz .ag-header-cell {
+		font-size: 0.8125rem;
+	}
+}
+
+/* Grid container fixes for ResizeObserver issues */
+.ag-theme-quartz {
+	position: relative;
+	box-sizing: border-box;
+}
+
+.ag-theme-quartz .ag-root-wrapper {
+	border: 1px solid var(--ag-border-color);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+/* Ensure proper sizing for grid container */
+.ag-theme-quartz .ag-body-viewport {
+	position: relative;
+}
+
+/* Print styles */
+@media print {
+	.ag-theme-quartz {
+		--ag-background-color: white;
+		--ag-odd-row-background-color: white;
+		--ag-header-background-color: #f5f5f5;
+	}
+
+	.ag-theme-quartz .ag-body-viewport {
+		overflow: visible !important;
+	}
+}

@@ -1,10 +1,9 @@
+import { EmployeeDashboard } from "./components/EmployeeDashboard";
+
 function App() {
 	return (
-		<div
-			className="text-red-400 text-center
-  "
-		>
-			Red
+		<div className="App">
+			<EmployeeDashboard />
 		</div>
 	);
 }
